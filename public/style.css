@@ -1,0 +1,22 @@
+:root {
+    
+}
+/* --------------------------------------
+ * FONTS
+ * --------------------------------------
+ */
+@font-face {
+        font-family: 'Arcade-Normal';
+        src:url('./font/Arcade-Normal.ttf.woff') format('woff'),
+            url('./font/Arcade-Normal.ttf.svg') format('svg'),
+            url('./font/Arcade-Normal.ttf.eot'),
+            url('./font/Arcade-Normal.ttf.eot?#iefix') format('embedded-opentype'); 
+        font-weight: normal;
+        font-style: normal;
+}
+
+* {
+ font-family: 'Arcade Normal';
+}
+
+
