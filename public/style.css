@@ -23,16 +23,35 @@
 }
 
 #banner {
-    text-align: center;
+    display: flex;
+    align-items: center;
     background-color: #000000;
     color: #FFFFFF;
     padding: 20px;
 }
 
 #banner h1 {
-    font-size: 1.7em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
 }
+
+.game-entry {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #CCCCCC;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #F9F9F9;
+}
+
+.game-cover-image, .game-screenshot {
+    display: block;
+    width: 200px;
+    height: auto;
+    justify-content: space-around;
+}
+
 #logo {
     width: 100px;
     height: auto;

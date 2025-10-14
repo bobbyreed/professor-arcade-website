@@ -20,6 +20,11 @@ function createGameList(games) {
         const gameEntry = document.createElement('div');
         gameEntry.className = 'game-entry';
 
+        const gameImg = document.createElement('img');
+        gameImg.src = game.coverImage;
+        gameImg.alt = `${game.name} cover`;
+        gameImg.className = 'game-cover-image';
+
         const gameLink = document.createElement('a');
         gameLink.href = game.url;
         gameLink.target = '_blank';
@@ -36,20 +41,15 @@ function createGameList(games) {
         gameDesc.textContent = game.description;
         gameDesc.className = 'game-description';
 
-        const gameImg = document.createElement('img');
-        gameImg.src = game.coverImage;
-        gameImg.alt = `${game.name} cover`;
-        gameImg.className = 'game-cover-image';
-
         const gameSS = document.createElement('img');
         gameSS.src = game.screenshot;
         gameSS.alt = `${game.name} screenshot`;
         gameSS.className = 'game-screenshot';
 
+        gameEntry.appendChild(gameImg);
         gameEntry.appendChild(gameLink);
         gameEntry.appendChild(authorLink);
         gameEntry.appendChild(gameDesc);
-        gameEntry.appendChild(gameImg);
         gameEntry.appendChild(gameSS);
         gameListDiv.appendChild(gameEntry);
     });
