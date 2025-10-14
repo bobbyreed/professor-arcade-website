@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./media/logo/logo.png">
     <title>Welcome to Professor Arcade!</title>
 </head>
 <body>
     <div id=banner>
+        <img src="./media/logo/logo.png" alt="Professor Arcade Logo" id="logo">
         <h1>Welcome to Professor Arcade!</h1>
-        <p>Professor Arcade houses the games created for Game Programming courses facilitated by Professor Bobby Reed as well as student projects.</p>
     </div>
+    <nav>
+        <a href="#"><button>Home/Games<span class="home"><!--js will insert here--></span></button></a>
+        <a href="./pages/about.html"><button>About<span class="about"><!--js will insert here--></span></button></a>
+        <a href="./pages/contact.html"><button>Contact<span class="contact"><!--js will insert here--></span></button></a>
+        <a href="./pages/blog.html"><button>Blog<span class="blog"><!--js will insert here--></span></button></a>
+    </nav>
     <div id="game-list">
         <!-- Game entries will be dynamically inserted here -->
     </div>
 
+    <script src="./js/game-list.js"></script>
     <script src="./script.js" type="module"></script>
+    
 </body>
 </html>

@@ -3,7 +3,7 @@
  * --------------------------------------
  */
 @font-face {
-        font-family: 'Arcade-Normal';
+        font-family: "Arcade-Normal";
         src:url('./font/Arcade-Normal.ttf.woff') format('woff'),
             url('./font/Arcade-Normal.ttf.svg') format('svg'),
             url('./font/Arcade-Normal.ttf.eot'),
@@ -17,7 +17,41 @@
 }
 
 * {
- font-family: 'Arcade Normal';
+ font-family: "Arcade-Normal", sans-serif;
+ font-weight: lighter;
+    margin: 0;
 }
+
+#banner {
+    text-align: center;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+#banner h1 {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+}
+#logo {
+    width: 100px;
+    height: auto;
+    margin-top: 20px;
+}
+
+nav {
+    background-color: #333333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+
 
 

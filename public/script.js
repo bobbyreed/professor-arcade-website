@@ -1,57 +1,51 @@
-import { GAMES } from './constants.js';
-
 console.log("Script loaded");
 
-const gameArray = Object.keys(GAMES).map(key => ({
-    name: GAMES[key].title,
-    author: GAMES[key].author,
-    authorGithubURL: GAMES[key].authorGithubURL,
-    description: GAMES[key].description,
-    url: GAMES[key].url,
-    coverImage: GAMES[key].coverImage,
-    screenshot: GAMES[key].screenshot
-}));
+whereAmI();
 
-createGameList(gameArray);
+function checkURL(url){
+    //console.log(`Checking URL: ${url}`);
 
-function createGameList(games) {
-    const gameListDiv = document.getElementById('game-list');
+    const home = url.includes('index.html');
+    const about = url.includes('about');
+    const blog = url.includes('blog');
+    const contact = url.includes('contact');
 
-    games.forEach(game => {
-        const gameEntry = document.createElement('div');
-        gameEntry.className = 'game-entry';
+    /* Debugging logs 
+    console.log(`Home check: ${home}`);
+    console.log(`About check: ${about}`);
+    console.log(`Blog check: ${blog}`);
+    console.log(`Contact check: ${contact}`);
+    */
 
-        const gameLink = document.createElement('a');
-        gameLink.href = game.url;
-        gameLink.target = '_blank';
-        gameLink.rel = 'noopener noreferrer';
-        gameLink.textContent = game.name;
+    switch(true) {
+        case home:
+            placeHereText('home');
+            break;
+        case about:
+            placeHereText('about');
+            break;
+        case blog:
+            placeHereText('blog');
+            break;
+        
+        case contact:
+            placeHereText('contact');
+            break;
+        default:
+            placeHereText('home');
+            break;
+        }
+    }
 
-        const authorLink = document.createElement('a');
-        authorLink.href = `https://${game.authorGithubURL}`;
-        authorLink.target = '_blank';
-        authorLink.rel = 'noopener noreferrer';
-        authorLink.textContent = game.author;
-
-        const gameDesc = document.createElement('p');
-        gameDesc.textContent = game.description;
-        gameDesc.className = 'game-description';
-
-        const gameImg = document.createElement('img');
-        gameImg.src = game.coverImage;
-        gameImg.alt = `${game.name} cover`;
-        gameImg.className = 'game-cover-image';
-
-        const gameSS = document.createElement('img');
-        gameSS.src = game.screenshot;
-        gameSS.alt = `${game.name} screenshot`;
-        gameSS.className = 'game-screenshot';
-
-        gameEntry.appendChild(gameLink);
-        gameEntry.appendChild(authorLink);
-        gameEntry.appendChild(gameDesc);
-        gameEntry.appendChild(gameImg);
-        gameEntry.appendChild(gameSS);
-        gameListDiv.appendChild(gameEntry);
-    });
+function placeHereText(className) {
+    const span = document.querySelector(`.${className}`);
+    if (span) {
+        span.textContent = ' (you are here)';
+    }
 }
+
+function whereAmI() {
+    const url = window.location.href.toLowerCase() ;
+    checkURL(url);
+}
+
