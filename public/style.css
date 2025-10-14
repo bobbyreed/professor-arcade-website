@@ -23,8 +23,6 @@
 }
 
 #banner {
-    display: flex;
-    align-items: center;
     background-color: #000000;
     color: #FFFFFF;
     padding: 20px;
@@ -34,9 +32,47 @@
     font-size: 1.5em;
 }
 
+/* --------------------------------------
+ * CARTRIDGE - Inspired by manz.dev -> https://www.reddit.com/r/webdev/comments/18fjmyf/nintendo_gameboy_cartridge_css/
+ * --------------------------------------
+ */
+
+cartridge {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    border: solid 5px #000000;
+    padding: 20px 50px 15px 50px;
+ }
+
+ .cartridge-label{
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    border: solid 5px #000000;
+    border-top: none;
+    padding: 15px;
+ }
+
+ .cartridge-label a {
+    color: goldenrod;
+    padding: 3px;
+ }
+
+ .cartridge-end {
+
+ }
+
+#game-list {
+    display: flex;
+    flex-direction: row;
+}
+
 .game-entry {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 5px solid #CCCCCC;
     border-radius: 25px;
     padding: 10px;
@@ -45,11 +81,14 @@
     background-color: #F9F9F9;
 }
 
+.game-cover-image{
+    
+
+}
+
 .game-cover-image, .game-screenshot {
-    display: block;
     width: 200px;
     height: auto;
-    justify-content: space-around;
 }
 
 #logo {

@@ -15,7 +15,7 @@
 export const GAMES = {
     "one-jump": {
         title: "One Jump",
-        author: "Bobby Reed",
+        author: "Professor Reed",
         authorGithubURL: "github.com/bobbyreed",
         description: "A high-stakes vertical falling game where Starsky the Ram descends from the stars to Earth through 10 increasingly challenging atmospheric stages. Navigate through space debris, weather phenomena, and urban obstacles while threading the needle for near-misses and maximum points.",
         url: "https://jump.abobbyreed.com",
