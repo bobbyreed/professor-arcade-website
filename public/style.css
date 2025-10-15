@@ -38,19 +38,34 @@
  */
 
 cartridge {
-    display: flex;
-    flex-direction: column;
     background-color: grey;
-    border: solid 5px #000000;
-    padding: 20px 50px 15px 50px;
+    border: solid 2px #000000;
+    padding: 0px 50px 15px 50px;
  }
+
+.container{
+    display: block;
+
+}
+
+.cartridge-notch {
+    width: 50px;
+    height: 20px;
+    background: linear-gradient(
+        to bottom,
+        #3a3b3a,
+        #484948 50%,
+        #3a3b3a 50%,
+        #484948
+        );
+}
 
  .cartridge-label{
     background-color: grey;
     display: flex;
     flex-direction: column;
     background-color: grey;
-    border: solid 5px #000000;
+    border: solid 2px #000000;
     border-top: none;
     padding: 15px;
  }
@@ -82,8 +97,8 @@ cartridge {
 }
 
 .game-cover-image{
-    
-
+    padding: 10px;
+    border-radius: 25px;
 }
 
 .game-cover-image, .game-screenshot {

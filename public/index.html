@@ -52,13 +52,76 @@
             const cartridgeContainer = document.createElement('div');
             cartridgeContainer.className = 'container';
             const cartridgeHeader = document.createElement('cartridge-header');
+            const cartridgeTopLeft = document.createElement('div');
+            cartridgeTopLeft.className = 'cartridge-top-left';
+            const cartridgeNotch = document.createElement('div');
+            cartridgeNotch.className = 'cartridge-notch';
+            const cartridgeTopRight = document.createElement('div');
+            cartridgeTopRight.className = 'cartridge-top-right';
             const cartridgeBody = document.createElement('div');
             cartridgeBody.className = 'cartridge-body';
             const cartridgeEnd = document.createElement('div');
             cartridgeEnd.className = 'cartridge-end';
             const cartridgeLabel = document.createElement('div');
             cartridgeLabel.className = 'cartridge-label';
-
+            const gameLabelText = document.createElement('p');
+            gameLabelText.textContent = "Click below to play!";
+            const gameLabelTextStyle = document.createElement('style');
+            gameLabelTextStyle.textContent = `
+                .cartridge-label p {
+                    margin: 0;
+                    font-size: 5px;
+                    color: white;
+                }
+            `;
+            const cartridgeLabelStyle = document.createElement('style');
+            cartridgeLabelStyle.textContent = `
+                .cartridge-label p{
+                    display: flex;
+                    align-self: flex-start;
+                    justify-self: flex-start;
+                    font-family: 'Arial', sans-serif;
+                    font-weight: bold;
+                    color: white;
+                }
+                .cartridge-label a {
+                    color: goldenrod;
+                    padding: 3px;
+                    text-decoration: none;
+                }
+                .cartridge-label a:hover {
+                    text-decoration: underline;
+                }
+            `;
+            const gameAuthorText = document.createElement('p');
+            gameAuthorText.textContent = "Created by:";
+            const gameAuthorTextStyle = document.createElement('style');
+            gameAuthorTextStyle.textContent = `
+                .cartridge-label p {
+                    margin: 0;
+                    font-size: 5px;
+                    color: white;
+                }
+            `;
+            const cartridgeAuthorStyle = document.createElement('style');
+            cartridgeAuthorStyle.textContent = `
+                .cartridge-label p{
+                    display: flex;
+                    align-self: flex-start;
+                    justify-self: flex-start;
+                    font-family: 'Arial', sans-serif;
+                    font-weight: bold;
+                    color: white;
+                }
+                .cartridge-label a {
+                    color: goldenrod;
+                    padding: 3px;
+                    text-decoration: none;
+                }
+                .cartridge-label a:hover {
+                    text-decoration: underline;
+                }
+            `;
 
             const gameImg = document.createElement('img');
             gameImg.src = game.coverImage;
@@ -89,16 +152,22 @@
             //assemble cartridge
             cartridge.appendChild(cartridgeStyle);
             cartridge.appendChild(cartridgeContainer);
+            cartridgeContainer.appendChild(cartridgeNotch);
+            cartridgeContainer.appendChild(cartridgeTopLeft);
+            cartridgeContainer.appendChild(cartridgeTopRight);
             cartridgeContainer.appendChild(cartridgeHeader);
             cartridgeContainer.appendChild(cartridgeBody);
             cartridgeBody.appendChild(gameImg);
             cartridgeBody.appendChild(cartridgeEnd);
+            cartridgeLabel.appendChild(gameLabelText);
             cartridgeLabel.appendChild(gameLink);
+            cartridgeLabel.appendChild(gameAuthorText);
             cartridgeLabel.appendChild(authorLink);
 
             //assemble gameEntry
             gameEntry.appendChild(cartridge);
             gameEntry.appendChild(cartridgeLabel);
+            gameEntry.appendChild(cartridgeLabelStyle);
             gameEntry.appendChild(gameDesc);
             gameEntry.appendChild(gameSS);
 
