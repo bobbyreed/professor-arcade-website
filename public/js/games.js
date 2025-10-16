@@ -1,5 +1,3 @@
-// Games
-
 /* Game object template (copy and paste below this line for new games; BE SURE TO SEPARATE ENTRIES WITH COMMAS):
 "example-game": {
         title: "Example Game",
