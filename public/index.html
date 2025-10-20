@@ -70,12 +70,10 @@
             coverImageSVG.preserveAspectRatio="xMidyMid meet";
             coverImageSVG.xmlns="http://www.w3.org/2000/svg";
             //image
-            const coverImageImage = document.createElement('image');
+            const coverImageImage = document.createElement('img');
             coverImageImage.id = "user-label-image";
-            coverImageImage.src = "./media/images/one-jump-cover.jpg";
+            coverImageImage.src = game.coverImage;
             coverImageImage.alt = "user uploaded label";
-            coverImageImage.width = "100%";
-            coverImageImage.height = "100%";
 
             const rightNotchLeft = document.createElement('div');
             rightNotchLeft.className = 'right-notch-left';
@@ -91,6 +89,13 @@
             rightSide.className = 'right-side';
             const arrow = document.createElement('div');
             arrow.className = 'arrow';
+            const arrowSVG = document.createElement('svg');
+            arrowSVG.viewBox = "0 0 200 200";
+            arrowSVG.preserveAspectRatio="xMidYMid meet";
+            arrowSVG.xmlns = "http://www.w3.org/2000/svg";
+            const arrowPoly = document.createElement('polygon');
+            arrowPoly.points="100, 20 180, 180 20, 180";
+            arrowPoly.style="fill: rbg(83,83,83);"
             const leftBottomSide = document.createElement('div');
             leftBottomSide.className = 'left-bottom-side';
             const bottomGrip = document.createElement('div');
@@ -101,6 +106,8 @@
             //game label
             const gameLabel = document.createElement('div');
             gameLabel.className = 'game-label';
+            const gameLabelButton = document.createElement('button');
+            gameLabelButton.className = 'game-label-button'
             const gameLabelText = document.createElement('p');
             gameLabelText.textContent = "Click below to play!";
             const gameLabelTextStyle = document.createElement('style');
@@ -178,10 +185,14 @@
             authorLink.textContent = game.author;
 
             const gameDesc = document.createElement('p');
+            const gameDescTitle = document.createElement('h2');
+            gameDescTitle.textContent = "Description"
             gameDesc.textContent = game.description;
             gameDesc.className = 'game-description';
 
             const gameSS = document.createElement('img');
+            const gameSSText = document.createElement('h2');
+            gameSSText.textContent = "Screenshot(s)"
             gameSS.src = game.screenshot;
             gameSS.alt = `${game.name} screenshot`;
             gameSS.className = 'game-screenshot';
@@ -201,6 +212,8 @@
             cartridge.appendChild(gripExtend);
             cartridge.appendChild(rightSide);
             cartridge.appendChild(arrow);
+            arrow.appendChild(arrowSVG);
+            arrowSVG.appendChild(arrowPoly);
             cartridge.appendChild(leftBottomSide);
             cartridge.appendChild(bottomGrip);
             cartridge.appendChild(rightBottomSide);
@@ -215,7 +228,9 @@
             gameEntry.appendChild(cartridge);
             gameEntry.appendChild(gameLabel);
             gameEntry.appendChild(cartridgeLabelStyle);
+            gameEntry.appendChild(gameDescTitle);
             gameEntry.appendChild(gameDesc);
+            gameEntry.appendChild(gameSSText);
             gameEntry.appendChild(gameSS);
 
             //add gameEntry to gameList

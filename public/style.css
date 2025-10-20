@@ -215,12 +215,15 @@
     background-color: #F9F9F9;
 }
 
-.game-cover-image{
-    padding: 10px;
-    border-radius: 25px;
+.cover-image{
+    contain:content;
 }
 
-.game-cover-image, .game-screenshot {
+.cover-image img{
+    margin-top: 100px;
+}
+
+.cover-image, .game-screenshot {
     width: 200px;
     height: auto;
 }
@@ -242,6 +245,48 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2em;
+}
+
+.user-label-image{
+    overflow:hidden;
+}
+
+.game-label {
+    border: 10px solid lightskyblue;
+    margin: 10px 0px;
+    background-color: #333333;
+    color:antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-label a{
+    color: antiquewhite;
+    text-decoration: none;
+    background-color: #686868;
+    border: 1px solid black;
+    padding: 5px 15px; 
+}
+
+.game-description{
+    border: 10px solid lightskyblue;
+    margin: 10px 0px;
+    background-color: #333333;
+    color:antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-screenshot{
+    border: 10px solid lightskyblue;
+    margin: 10px 0px;
+    background-color: #333333;
+    color:antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 
