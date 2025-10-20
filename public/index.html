@@ -44,26 +44,63 @@
 
         games.forEach(game => {
             const gameEntry = document.createElement('div');
-            gameEntry.className = 'game-entry';
+            gameEntry.className = 'nes-container';
             //Cartridge design from manz.dev
                 //https://www.reddit.com/r/webdev/comments/18fjmyf/nintendo_gameboy_cartridge_css/
             const cartridge = document.createElement('cartridge');
-            const cartridgeStyle = document.createElement('style')
-            const cartridgeContainer = document.createElement('div');
-            cartridgeContainer.className = 'container';
-            const cartridgeHeader = document.createElement('cartridge-header');
-            const cartridgeTopLeft = document.createElement('div');
-            cartridgeTopLeft.className = 'cartridge-top-left';
-            const cartridgeNotch = document.createElement('div');
-            cartridgeNotch.className = 'cartridge-notch';
-            const cartridgeTopRight = document.createElement('div');
-            cartridgeTopRight.className = 'cartridge-top-right';
-            const cartridgeBody = document.createElement('div');
-            cartridgeBody.className = 'cartridge-body';
-            const cartridgeEnd = document.createElement('div');
-            cartridgeEnd.className = 'cartridge-end';
-            const cartridgeLabel = document.createElement('div');
-            cartridgeLabel.className = 'cartridge-label';
+            cartridge.className = 'nes';
+            const leftNotchLeft = document.createElement('div');
+            leftNotchLeft.className = 'left-notch-left';
+            const leftNotch = document.createElement('div');
+            leftNotch.className = 'left-notch';
+            const leftNotchRight = document.createElement('div');
+            leftNotchRight.className = 'left-notch-right';
+            const grip = document.createElement('div');
+            grip.className = 'grip';
+
+            //cover img div > svg > image
+            //div
+            const coverImage = document.createElement('div');
+            coverImage.className = 'cover-image';
+            //svg
+            const coverImageSVG = document.createElement('svg');
+            coverImageSVG.className = 'label-svg';
+            coverImageSVG.style = 'border-radius: 0px 0px 10px 10px;';
+            coverImageSVG.viewBox = "0 0 300 335";
+            coverImageSVG.preserveAspectRatio="xMidyMid meet";
+            coverImageSVG.xmlns="http://www.w3.org/2000/svg";
+            //image
+            const coverImageImage = document.createElement('image');
+            coverImageImage.id = "user-label-image";
+            coverImageImage.src = "./media/images/one-jump-cover.jpg";
+            coverImageImage.alt = "user uploaded label";
+            coverImageImage.width = "100%";
+            coverImageImage.height = "100%";
+
+            const rightNotchLeft = document.createElement('div');
+            rightNotchLeft.className = 'right-notch-left';
+            const rightNotch = document.createElement('div');
+            rightNotch.className = 'right-notch';
+            const rightNotchRight = document.createElement('div');
+            rightNotchRight.className = 'right-notch-right';
+            const leftSide = document.createElement('div');
+            leftSide.className = 'left-side';
+            const gripExtend = document.createElement('div');
+            gripExtend.className = 'grip-extend';
+            const rightSide = document.createElement('div');
+            rightSide.className = 'right-side';
+            const arrow = document.createElement('div');
+            arrow.className = 'arrow';
+            const leftBottomSide = document.createElement('div');
+            leftBottomSide.className = 'left-bottom-side';
+            const bottomGrip = document.createElement('div');
+            bottomGrip.className = 'bottom-grip';
+            const rightBottomSide = document.createElement('div');
+            rightBottomSide.className = 'right-bottom-side';
+
+            //game label
+            const gameLabel = document.createElement('div');
+            gameLabel.className = 'game-label';
             const gameLabelText = document.createElement('p');
             gameLabelText.textContent = "Click below to play!";
             const gameLabelTextStyle = document.createElement('style');
@@ -150,23 +187,33 @@
             gameSS.className = 'game-screenshot';
 
             //assemble cartridge
-            cartridge.appendChild(cartridgeStyle);
-            cartridge.appendChild(cartridgeContainer);
-            cartridgeContainer.appendChild(cartridgeNotch);
-            cartridgeContainer.appendChild(cartridgeTopLeft);
-            cartridgeContainer.appendChild(cartridgeTopRight);
-            cartridgeContainer.appendChild(cartridgeHeader);
-            cartridgeContainer.appendChild(cartridgeBody);
-            cartridgeBody.appendChild(gameImg);
-            cartridgeBody.appendChild(cartridgeEnd);
-            cartridgeLabel.appendChild(gameLabelText);
-            cartridgeLabel.appendChild(gameLink);
-            cartridgeLabel.appendChild(gameAuthorText);
-            cartridgeLabel.appendChild(authorLink);
+            cartridge.appendChild(leftNotchLeft);
+            cartridge.appendChild(leftNotch);
+            cartridge.appendChild(leftNotchRight);
+            cartridge.appendChild(grip);
+            cartridge.appendChild(coverImage);
+            coverImage.appendChild(coverImageSVG);
+            coverImageSVG.appendChild(coverImageImage);
+            cartridge.appendChild(rightNotchLeft);
+            cartridge.appendChild(rightNotch);
+            cartridge.appendChild(rightNotchRight);
+            cartridge.appendChild(leftSide);
+            cartridge.appendChild(gripExtend);
+            cartridge.appendChild(rightSide);
+            cartridge.appendChild(arrow);
+            cartridge.appendChild(leftBottomSide);
+            cartridge.appendChild(bottomGrip);
+            cartridge.appendChild(rightBottomSide);
+
+            //game label
+            gameLabel.appendChild(gameLabelText);
+            gameLabel.appendChild(gameLink);
+            gameLabel.appendChild(gameAuthorText);
+            gameLabel.appendChild(authorLink);
 
             //assemble gameEntry
             gameEntry.appendChild(cartridge);
-            gameEntry.appendChild(cartridgeLabel);
+            gameEntry.appendChild(gameLabel);
             gameEntry.appendChild(cartridgeLabelStyle);
             gameEntry.appendChild(gameDesc);
             gameEntry.appendChild(gameSS);
