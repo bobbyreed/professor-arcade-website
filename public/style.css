@@ -32,6 +32,34 @@
     font-size: 1.5em;
 }
 
+.form {
+    background-color: gainsboro;
+    text-align: center;
+    border: 10px solid gainsboro
+}
+
+fieldset{
+    color: white;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border: 3px solid black;
+    margin: 10px;
+    padding: 2px 2px;
+    border-radius: 10px;
+}
+
+span{
+    font-size: small;
+}
+form button{
+    border-radius: 10%;
+    padding: 0% 5%;
+}
+
 /* --------------------------------------
  * CARTRIDGE - Inspired by manz.dev -> https://www.reddit.com/r/webdev/comments/18fjmyf/nintendo_gameboy_cartridge_css/
  * --------------------------------------
