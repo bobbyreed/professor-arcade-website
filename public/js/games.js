@@ -20,6 +20,15 @@ export const GAMES = {
         coverImage: "./media/images/one-jump-cover.png",
         screenshot: "./media/images/one-jump-ss.png"
     },
+    "in-chesst": {
+        title: "In-Chesst",
+        author: "Professor Reed",
+        authorGithubURL: "github.com/bobbyreed",
+        description: "A chess game to use as a starting point for experimenting around whether chessboard grid distortion affects play.",
+        url: "https://bobbyreed.github.io/In-Chesst/",
+        coverImage: "./media/images/in-chesst.png",
+        screenshot: "./media/images/in-chesst.png"
+    },
     "example-game": {
         title: "Example Game",
         author: "Jane Doe",
